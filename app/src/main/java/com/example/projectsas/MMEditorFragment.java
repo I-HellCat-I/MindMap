@@ -25,7 +25,7 @@ public class MMEditorFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_MIND_MAP_NAME = "mindMapName";
     Button buttonAddElement;
-    DrawView forDraw;
+    SurfaceView forDraw;
 
     // TODO: Rename and change types of parameters
     private MindMap mindMap;
