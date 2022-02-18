@@ -6,6 +6,12 @@ public class FileManager {
         int numberOfItems = 0;
         return numberOfItems;
     }
+
+    public static void backup(String mindMapName) {
+
+    }
+
+
     // TODO: make it work
     MindMap importMindMap(String mindMapName){
         MindMap mindMap = new MindMap();

@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.File;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MMEditorFragment#newInstance} factory method to
@@ -72,5 +74,6 @@ public class MMEditorFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        FileManager.backup(mindMapName);
     }
 }
