@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Users/ofofo/AndroidStudioProjects/projectsas/app/src/main/res/layout/activity_main.xml" value="0.27445652173913043" />
         <entry key="..\:/Users/ofofo/AndroidStudioProjects/projectsas/app/src/main/res/layout/fragment_create_new.xml" value="0.32155797101449274" />
+        <entry key="..\:/Users/ofofo/AndroidStudioProjects/projectsas/app/src/main/res/layout/fragment_edit.xml" value="0.25" />
         <entry key="..\:/Users/ofofo/AndroidStudioProjects/projectsas/app/src/main/res/layout/fragment_menu.xml" value="0.32155797101449274" />
+        <entry key="..\:/Users/ofofo/AndroidStudioProjects/projectsas/app/src/main/res/layout/mindmap_element.xml" value="0.33" />
         <entry key="..\:/Users/ofofo/AndroidStudioProjects/projectsas/app/src/main/res/layout/mindmap_rv_element.xml" value="0.35597826086956524" />
       </map>
     </option>

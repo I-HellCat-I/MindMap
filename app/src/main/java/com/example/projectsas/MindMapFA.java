@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MindMapFA {
     private String name;
     private int iconId;
-    private static ArrayList<MindMapFA> MindMapsFA;
+    private static ArrayList<MindMapFA> MindMapsFA = new ArrayList<>();
     public MindMapFA(String n, int id){
         name = n;
         iconId = id;

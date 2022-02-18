@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -20,9 +19,10 @@ public class ResViewAdapter extends RecyclerView.Adapter<ResViewAdapter.MindMapV
     private static int viewHolderCount;
     protected Context parent;
 
-    ResViewAdapter (@NonNull Context parent, int numberOfItems){
+    ResViewAdapter (@NonNull Context parent, int numberOfItems, ArrayList<MindMapFA> mindMaps){
         this.numberOfItems = numberOfItems;
         this.parent = parent;
+        this.MindMaps = mindMaps;
         viewHolderCount = 0;
     }
 
@@ -31,9 +31,13 @@ public class ResViewAdapter extends RecyclerView.Adapter<ResViewAdapter.MindMapV
     public MindMapViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         View v = LayoutInflater.from(context).inflate(R.layout.mindmap_rv_element, parent, false);
-        MindMapViewHolder viewHolder = new MindMapViewHolder(v);
-        viewHolder.viewHolderIndex.setText("ViewHolder Index: " + viewHolderCount);
-        viewHolderCount++;
+        MindMapViewHolder viewHolder;
+        try {
+            viewHolder = new MindMapViewHolder(v, MindMaps.get(viewHolderCount).getName());
+            viewHolderCount++;
+        } catch (IndexOutOfBoundsException e) {
+            viewHolder = new MindMapViewHolder(v, "");
+        }
         return viewHolder;
     }
 
@@ -49,25 +53,26 @@ public class ResViewAdapter extends RecyclerView.Adapter<ResViewAdapter.MindMapV
 
     class MindMapViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
-        TextView name;
-        TextView listItemNumberView;
+        String name;
+        TextView listMindMapNameView;
         TextView viewHolderIndex;
         ImageView preview;
-        public MindMapViewHolder(@NonNull View itemView) {
+        public MindMapViewHolder(@NonNull View itemView, String name) {
             super(itemView);
 
-            listItemNumberView = itemView.findViewById(R.id.rv_mm_item);
+            listMindMapNameView = itemView.findViewById(R.id.rv_mm_item);
             viewHolderIndex = itemView.findViewById(R.id.rv_mm_view_holder_number);
+            this.name = name;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int positionIndex = getAdapterPosition();
-                    Toast.makeText(parent, "Not today: " + positionIndex, Toast.LENGTH_SHORT).show();
+                    MainActivity.changeFragment("editorFragment", null);
                 }
             });
         }
         void bind(int listIndex){
-            listItemNumberView.setText(String.valueOf(listIndex));
+            listMindMapNameView.setText(String.valueOf(name));
         }
     }
 }

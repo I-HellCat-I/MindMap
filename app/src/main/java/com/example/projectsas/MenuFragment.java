@@ -87,7 +87,7 @@ public class MenuFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         rv.setLayoutManager(layoutManager);
         rv.setHasFixedSize(true);
-        rvAdapter = new ResViewAdapter(requireActivity(), numberOfItems);
+        rvAdapter = new ResViewAdapter(requireActivity(), numberOfItems, FileManager.getMindMapsFA());
         rv.setAdapter(rvAdapter);
 
         btnCreateNew = requireActivity().findViewById(R.id.buttonCreateNew);
@@ -95,9 +95,8 @@ public class MenuFragment extends Fragment {
         btnCreateNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.changeFragment("editorFragment_new");
+                MainActivity.changeFragment("editorFragment_new", null);
             }
         });
-
     }
 }

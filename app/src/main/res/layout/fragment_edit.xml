@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_add_basic_leaf"
             android:layout_width="53dp"
             android:layout_height="46dp"
             android:text="Button"
@@ -20,10 +20,20 @@
 
         <Button
             android:id="@+id/button_save"
-            android:layout_width="54dp"
-            android:layout_height="47dp"
+            android:layout_width="52dp"
+            android:layout_height="54dp"
             android:text="Save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="409dp"
+            android:layout_height="626dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_add_basic_leaf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_save" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
